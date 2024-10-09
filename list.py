@@ -20,10 +20,6 @@ kk=lin.reverse()
 print(' '.join(lin))
 
 
-
-
-
-
 if 24 and "apple" or "cho"in my_list:
     print("yes")
 else:

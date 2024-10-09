@@ -3,7 +3,7 @@
 mystr = "hello"
 mystr1 = 'aditi'
 mystr2 = """ hello
-bye it is used to create multiline string with
+it is used to create multiline string with
 out having actual line in output
 basically used for documentation purposes"""
 
