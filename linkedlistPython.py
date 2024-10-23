@@ -68,7 +68,76 @@ class linkedlist:
             current=new_node
         self.head=prev    
     
+    def cycle_found_floyd(self):
+        fast=slow=self.head
+        current=self.head
+        while current and current.next:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
+                return True   #it contains cycle
+        return False    # No cycle
+    
+
+    def linkedlist_palindrome_using_stack(self):
+        # 1->2->3->2->1
+        # 1->2->3->3->2->1 this is also palindrome since two halves mirror each other
+        slow=fast=self.head
+        stack=[]
+        while fast and fast.next:
+            stack.append(slow.data)
+            slow=slow.next
+            fast=fast.next.next
+        if fast:
+            slow=slow.next # for odd linkedlist -- cuz fast wont go to None in odd case
+
+        while slow:
+            top= stack.pop()
+            if top!=slow.data:
+                return False
+            slow=slow.next
         
+        return True    
+
+
+    #Another method for linkedlist palindrome
+    def linkedlist_palindrome_using_reverse_linkedlist(self):
+        slow=fast=self.head
+
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+
+        second_half=self._reverse_for_palindrome(slow)
+        first_half=self.head
+        while second_half:
+            if first_half.data!=second_half.data:
+                return False
+            second_half=second_half.next
+            first_half=first_half.next
+        return True    
+
+
+    def _reverse_for_palindrome(self,head): #method of palindrome
+        prev=None
+        current=head
+        while current:
+            newnode=current.next
+            current.next=prev
+            prev=current
+            current=newnode
+        head=prev    
+    
+
+    def middle_of_linkedlist(self):
+        slow=fast=self.head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+        return slow
+
+
+           
 
 list1=linkedlist()
 list1.insert_at_begining(4)
