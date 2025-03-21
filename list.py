@@ -44,7 +44,7 @@ item1=my_list2.remove("a")
 print(item1)
 print(my_list2)
 
-itm2=my_list.reverse()
+itm2=my_list.reverse() # changes the original list
 print(my_list)
 
 int_list=[-1,-2,7,5,-9]
@@ -131,7 +131,7 @@ for i in li:
 print(large, small) 
 
 
-sample=['abc','xyx','aba','1221']
+sample=['abc','xyx','aba','12321']
 counti=0
 for i in sample:
     if len(i)>2 :
@@ -224,9 +224,9 @@ print(res)
 
 #     if minsum < mini:
 #         mini = minsum
-#         pairs = [(arr1[i], arr2[j])]
+#         pairs = [(arr1[i], arr2[j])] #resettong the pairs each time
 #     elif minsum == mini:
-#         pairs.append((arr1[i], arr2[j]))
+#         pairs.append((arr1[i], arr2[j])) #appending when sure
     
 #     if currsum < X:
 #         i += 1

@@ -1,47 +1,48 @@
-# class stackbasic:
-#     def __init__(self):
-#         self.stack=[]
+class stackbasic:
+    def __init__(self):
+        self.stack=[]
     
-#     def push(self,item):
-#         return self.stack.append(item)
+    def push(self,item):
+        return self.stack.append(item)
 
-#     def pop(self):
-#         if not self.isempty():
-#             return self.stack.pop()
-#         return None
+    def pop(self):
+        if not self.isempty():
+            return self.stack.pop()
+        return None
     
-#     def peek(self):
-#         if not self.isempty():
-#             return self.stack[-1]
-#         return None
+    def peek(self):
+        if not self.isempty():
+            return self.stack[-1]
+        return None
     
-#     def isempty(self):
-#         return len(self.stack)==0
+    def isempty(self):
+        return len(self.stack)==0
 
-# stack1=stackbasic()
-# stack1.push(4)
-# print(stack1.peek())
+stack1=stackbasic()
+stack1.push(4)
+stack1.push(45)
+print(stack1.peek())
 
 
 
-# ----PARENTHESIS MATCH----
-# class parenthesismatch:
-#     def __init__(self):
-#         self.stack=[]
+#----PARENTHESIS MATCH----
+class parenthesismatch:
+    def __init__(self):
+        self.stack=[]
 
-#     def is_match(self,expression):
-#         matchingDict={ ')':'(','}':'{',']':'[' }
-#         for char in expression:
-#             if char in matchingDict.values():
-#                 self.stack.append(char)
-#             elif char in matchingDict.keys():
-#                 if self.stack ==[] or matchingDict[char] != self.stack.pop():
-#                     return False
-#         return self.stack
+    def is_match(self,expression):
+        matchingDict={ ')':'(','}':'{',']':'[' }
+        for char in expression:
+            if char in matchingDict.values():
+                self.stack.append(char)
+            elif char in matchingDict.keys():
+                if self.stack ==[] or matchingDict[char] != self.stack.pop():
+                    return False
+        return self.stack
 
-# match1=parenthesismatch()
-# exp="[()]"
-# print(match1.is_match(exp))
+match1=parenthesismatch()
+exp="[()]"
+print(match1.is_match(exp))
 
 
 # #---POSTFIX EXP EVALUATION---

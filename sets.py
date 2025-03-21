@@ -88,8 +88,8 @@ def commom(a,b,c):
     else:
         return False
 
-a=[1,2,4]
-b=[2,3,5]
+a=[1,2,4,'a']
+b=[2,3,5,'a']
 c=[9,10,2]
 print(commom(a,b,c))
 
